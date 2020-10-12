@@ -1,0 +1,185 @@
+:root {
+    --color-red:rgb(234, 83, 83);
+    --color-cyan:rgb(69, 211, 211);
+    --color-orange:rgb(252, 175, 74);
+    --color-blue:rgb(84, 158, 242);
+    --color-primary-dark:rgb(76, 78, 97);
+    --color-primary-med:rgb(163, 165, 174);
+    --color-primary-light:hsl(0, 0%, 98%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, 
+*::before, 
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+    /* if default browser font is 16px, 1rem will now equal 10px */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: var(--color-primary-dark);
+    background-color: var(--color-primary-light);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7rem 0;
+}
+
+
+/* HEADING SECTION */
+.heading-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.heading-main {
+    font-weight: 200;
+    font-size: 3.5rem;
+}
+
+.heading-bold {
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 1.6rem;
+}
+
+.sub-heading {
+    font-weight: 400;
+    color: var(--color-primary-med);
+    font-size: 1.5rem;
+    width: 60%;
+}
+
+
+/* CARD WRAPPERS */
+.card-section-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-section--2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+/* CARD STYLES */
+.card {
+    background-color: #fff;
+    padding: 2.5rem 3rem;
+    border-radius: 4px;
+    box-shadow: 0 1rem 2rem rgba(32, 92, 182, 0.2);
+    width: 350px;
+    height: 250px;
+    background-position: bottom 3rem right 3rem;
+    background-repeat: no-repeat;
+    color: var(--color-primary-med);
+    transition: all .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-.5rem);
+    box-shadow: 0 1rem 3rem rgba(32, 92, 182, 0.2);
+}
+
+.card-heading {
+    color: var(--color-primary-dark);
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+}
+
+.card-description{
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+.card--cyan {
+    border-top: 4px solid var(--color-cyan);
+    background-image: url("./images/icon-supervisor.svg");
+}
+
+.card--red{
+    border-top: 4px solid var(--color-red);
+    background-image: url("./images/icon-team-builder.svg");
+    margin-bottom: 3rem;
+}
+
+.card--orange{
+    border-top: 4px solid var(--color-orange);
+    background-image: url("./images/icon-karma.svg");
+}
+
+.card--blue{
+    border-top: 4px solid var(--color-blue);
+    background-image: url("./images/icon-calculator.svg");
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width:1150px) {
+    .card-section-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .card {
+        margin-bottom: 3rem;
+        max-width: 450px;
+        height: unset;
+        width: unset;
+        min-height: 230px;
+    }
+
+    .card-section--2 {
+        align-items: stretch;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .container {
+        padding-top: 8rem;
+        padding-bottom: 6rem;
+    }
+    .heading-wrapper {
+        margin-bottom: 7.5rem;
+    }
+
+    .heading-main, .heading-bold {
+        font-size: 2.4rem;
+    }
+
+    .sub-heading {
+        width: 320px;
+    }
+
+    .card {
+    width: 315px;
+    height: 225px;
+    background-size: 56px 56px;
+    margin-bottom: 2.3rem;
+    }
+}
